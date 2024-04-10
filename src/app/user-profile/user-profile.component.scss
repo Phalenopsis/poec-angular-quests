@@ -3,13 +3,21 @@
     padding: 0;
     border: 1px solid gray;
 
-    &> :not(img) {
+    &> :not(img, footer) {
         margin-left: 1rem;
     }
 
     .name-firstname {
         font-size: 1.5rem;
         font-weight: 600;
+    }
+
+    footer {
+        margin-top: 1rem;
+        background-color: lightgray;
+        padding: 0.5rem;
+        padding-left: 1rem;
+        border-top: 1px solid gray;
     }
 
 }
