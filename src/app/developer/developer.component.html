@@ -19,9 +19,9 @@
         <span>Bio :</span>
         <span>{{developer.bio}}</span>
     </div>
-    <div *ngFor="let skill of developer.skills">
+    <div >
         <!-- ppour chaque skill-->
-        <app-skill
+        <app-skill *ngFor="let skill of developer.skills"
             [skill]="skill"></app-skill>
     </div>
 
