@@ -16,6 +16,6 @@ export class UserKittenComponent {
   }
 
   adoptKitten() {
-    this.kittenList.push(this._lastAddoptedKitten);
+    if (this._lastAddoptedKitten.name !== "") this.kittenList.push(this._lastAddoptedKitten);
   }
 }
