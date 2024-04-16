@@ -1,1 +1,20 @@
-<p>create-kitten works!</p>
+<form (ngSubmit)="saveKitten()">
+    <legend>Enregistrement d'un chaton</legend>
+    <fieldset>
+        <label for="kittenName">Nom du chaton :</label>
+        <input type="text" name="kittenName" id="kittenName" [(ngModel)]="newKitten.name">
+    </fieldset>
+    <fieldset>
+        <label for="kittenRace">Race :</label>
+        <input type="text" name="kittenRace" id="kittenRace" [(ngModel)]="newKitten.race">
+    </fieldset>
+    <fieldset>
+        <label for="kittenBirthday">Date de naissance :</label>
+        <input type="date" name="kittenBirthday" id="kittenBirthday" [(ngModel)]="newKitten.birthday">
+    </fieldset>
+    <fieldset>
+        <label for="kittenImage">Image :</label>
+        <input type="text" name="kittenImage" id="kittenImage" [(ngModel)]="newKitten.imageSrc">
+    </fieldset>
+    <button type="submit">Enregistrer</button>
+</form>
