@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Kitten } from './models/types/kitten.type';
+import { Kitten } from './models/classes/kitten.class';
 
 @Component({
   selector: 'app-root',
@@ -8,16 +8,16 @@ import { Kitten } from './models/types/kitten.type';
 })
 export class AppComponent {
   title = 'quest-angular';
-  kittenCreated: Kitten = {
-    name: "",
-    race: "",
-    birthday: new Date(),
-    imageSrc: ""
-  };
+  kittenCreated: Kitten = new Kitten();
+  adoptedKitten: Kitten = new Kitten();
   isKittenCreated: boolean = false;
 
   onReceiveKitten(event: Kitten) {
     this.isKittenCreated = true;
-    this.kittenCreated = event;
+    this.kittenCreated = { ...event };
+  }
+
+  onAdoptKitten(event: Kitten) {
+    this.adoptedKitten = { ...event };
   }
 }

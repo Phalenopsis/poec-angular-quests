@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { Kitten } from '../models/types/kitten.type';
+import { Kitten } from '../models/classes/kitten.class';
 
 @Component({
   selector: 'app-create-kitten',
@@ -7,12 +7,7 @@ import { Kitten } from '../models/types/kitten.type';
   styleUrl: './create-kitten.component.scss'
 })
 export class CreateKittenComponent {
-  newKitten: Kitten = {
-    name: "",
-    race: "",
-    birthday: new Date(),
-    imageSrc: ""
-  };
+  newKitten: Kitten = new Kitten();
 
   @Output()
   sendKitten: EventEmitter<Kitten> = new EventEmitter();

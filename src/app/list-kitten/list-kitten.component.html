@@ -1,1 +1,8 @@
-<p>list-kitten works!</p>
+
+<section>
+    <h2>Kittens to adopt</h2>
+    <li *ngFor="let kitten of kittenList; let index = index">
+        {{kitten.name}} 
+        <button (click)="sendAndRemoveKitten(index)">adopter</button>
+    </li>
+</section>

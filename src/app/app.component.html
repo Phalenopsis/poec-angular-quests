@@ -2,3 +2,10 @@
 (sendKitten)="onReceiveKitten($event)"></app-create-kitten>
 <hr>
 {{kittenCreated.name}}
+
+<app-list-kitten 
+(adoptedKitten)="onAdoptKitten($event)"
+[newKitten]="kittenCreated"></app-list-kitten>
+
+<app-user-kitten
+[lastAdoptedKitten]="adoptedKitten"></app-user-kitten>
