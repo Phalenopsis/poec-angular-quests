@@ -1,1 +1,4 @@
-<app-create-kitten></app-create-kitten>
+<app-create-kitten
+(sendKitten)="onReceiveKitten($event)"></app-create-kitten>
+<hr>
+{{kittenCreated.name}}
