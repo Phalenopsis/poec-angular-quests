@@ -1,0 +1,12 @@
+<article class="flip-card">
+    <div class="flip-card-inner">
+        <div class="flipd-card-front">
+            <img [src]="kitten.imageSrc" alt="Photo de {{kitten.name}}">
+        </div>
+        <div class="flip-card-back">
+            <h2>{{kitten.name}}</h2>
+            <p>{{kitten.race}}</p>
+            <p>{{kitten.birthday | date:'d MMMM yyyy':'':'fr-FR'}}</p>
+        </div>
+    </div>
+</article>
