@@ -1,0 +1,11 @@
+ul.card-container {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    gap: 12px;
+
+}
+
+li {
+    text-align: center;
+}

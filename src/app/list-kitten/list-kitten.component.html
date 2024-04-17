@@ -1,8 +1,11 @@
 
 <section>
     <h2>Kittens to adopt</h2>
-    <li *ngFor="let kitten of kittenList; let index = index">
-        {{kitten.name}} 
-        <button (click)="sendAndRemoveKitten(index)">adopter</button>
-    </li>
+    <ul class="card-container">
+        <li *ngFor="let kitten of kittenList; let index = index">
+            <app-kitten-card
+            [kitten]="kitten"></app-kitten-card> 
+            <button (click)="sendAndRemoveKitten(index)">Adopter ❤️</button>
+        </li>
+    </ul>
 </section>
