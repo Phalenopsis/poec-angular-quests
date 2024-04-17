@@ -9,6 +9,7 @@ import { ListKittenComponent } from './list-kitten/list-kitten.component';
 import { UserKittenComponent } from './user-kitten/user-kitten.component';
 import { FormsModule } from '@angular/forms';
 import { KittenCardComponent } from './kitten-card/kitten-card.component';
+import { HeartComponent } from './heart/heart.component';
 registerLocaleData(localeFr);
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ registerLocaleData(localeFr);
     CreateKittenComponent,
     ListKittenComponent,
     UserKittenComponent,
-    KittenCardComponent
+    KittenCardComponent,
+    HeartComponent
   ],
   imports: [
     BrowserModule,
