@@ -1,3 +1,33 @@
 form {
-    width: 50vmin;
+    font-size: 1.5rem;
+
+    legend {
+        font-size: 2rem;
+    }
+
+    fieldset {
+        border: none;
+    }
+
+    label {
+        display: block;
+        font-size: 1.5rem;
+    }
+
+    input[type="text"] {
+        padding: 4px;
+        font-size: 1.5rem;
+    }
+
+    input[type="date"] {
+        font-size: 1.5rem;
+        padding: 4px;
+        ;
+    }
+
+    .errors {
+        font-size: 1rem;
+        color: red;
+        font-weight: 600;
+    }
 }
