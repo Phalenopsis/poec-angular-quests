@@ -8,3 +8,20 @@
 body {
     margin: 5rem 20vw;
 }
+
+button {
+    padding: 0.5rem;
+    border: 2px solid blueviolet;
+    border-radius: 8px;
+    background-color: salmon;
+    background-image: radial-gradient(circle, rgba(250, 128, 114, 0) 0%, rgba(255, 255, 255, 1) 50%, rgba(250, 128, 114, 0) 100%);
+    transition: background-color 1s, border-color 1s;
+}
+
+button:hover {
+    border-color: salmon;
+    background-color: blueviolet;
+    /* background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(250, 128, 114, 1) 50%, rgba(255, 255, 255, 1) 100%);*/
+    transition: background-color 1s, border-color 1s;
+
+}
