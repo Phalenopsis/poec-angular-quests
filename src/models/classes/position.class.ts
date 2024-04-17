@@ -1,6 +1,11 @@
 export class Position {
     constructor(
-        private x: number,
-        private y: number
+        public x: number,
+        public y: number
     ) { }
+
+    move(vx: number, vy: number) {
+        this.x += vx;
+        this.y += vy;
+    }
 }
