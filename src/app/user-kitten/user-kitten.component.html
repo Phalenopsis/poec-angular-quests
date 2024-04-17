@@ -1,4 +1,9 @@
 <section>
     <h2>My kittens</h2>
-    <li *ngFor="let kitten of kittenList">{{kitten.name}} </li>
+    <ul>
+        <li *ngFor="let kitten of kittenList; let index = index">
+            <app-kitten-card
+            [kitten]="kitten"></app-kitten-card> 
+        </li>
+    </ul>
 </section>
