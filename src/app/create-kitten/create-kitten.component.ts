@@ -14,5 +14,6 @@ export class CreateKittenComponent {
 
   saveKitten() {
     this.sendKitten.emit(this.newKitten);
+    this.newKitten = new Kitten()
   }
 }
