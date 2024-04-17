@@ -7,6 +7,7 @@
 
 body {
     margin: 5rem 20vw;
+    background-color: rgb(252, 239, 238);
 }
 
 button {
@@ -28,4 +29,12 @@ button:hover {
 button:disabled {
     border-color: gray;
     background-color: lightgray;
+}
+
+hr {
+    margin: 1rem 0;
+    border: 1px solid white;
+    -webkit-box-shadow: 5px 5px 15px 5px deeppink;
+    box-shadow: 5px 5px 15px 5px deeppink;
+
 }
