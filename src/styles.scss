@@ -23,5 +23,9 @@ button:hover {
     background-color: blueviolet;
     /* background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(250, 128, 114, 1) 50%, rgba(255, 255, 255, 1) 100%);*/
     transition: background-color 1s, border-color 1s;
+}
 
+button:disabled {
+    border-color: gray;
+    background-color: lightgray;
 }
