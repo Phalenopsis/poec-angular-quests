@@ -3,33 +3,26 @@
     <fieldset>
         <label for="kittenName">Nom du chaton :</label>
         <input type="text" name="kittenName" id="kittenName" [(ngModel)]="newKitten.name" #kittenName="ngModel" required>
+        <span class="errors" *ngIf="kittenName.errors?.['required']">Le nom du chaton est requis</span>
     </fieldset>
-    <div class="errors" *ngIf="kittenName.errors">
-        <span *ngIf="kittenName.errors?.['required']">Le nom du chaton est requis</span>
-    </div>
-    
+        
     <fieldset>
         <label for="kittenRace">Race :</label>
         <input type="text" name="kittenRace" id="kittenRace" [(ngModel)]="newKitten.race" required="" #kittenRace="ngModel">
+        <span class="errors" *ngIf="kittenRace.errors?.['required']">La race du chaton est requise</span>
     </fieldset>
-    <div class="errors" *ngIf="kittenRace.errors"> 
-        <span *ngIf="kittenRace.errors?.['required']">La race du chaton est requise</span>
-    </div>
-    
+
     <fieldset>
         <label for="kittenBirthday">Date de naissance :</label>
         <input type="date" name="kittenBirthday" id="kittenBirthday" [(ngModel)]="newKitten.birthday" required #kittenBirthday="ngModel">
+        <span class="errors" *ngIf="kittenBirthday.errors?.['required']">La date est invalide</span>
     </fieldset>
-    <div class="errors" *ngIf="kittenBirthday.errors">
-        <span *ngIf="kittenBirthday.errors?.['required']">La date est invalide</span>
-    </div>
 
     <fieldset>
         <label for="kittenImage">Image :</label>
         <input type="text" name="kittenImage" id="kittenImage" [(ngModel)]="newKitten.imageSrc" required="" #kittenImageSrc="ngModel">
+        <span class="errors" *ngIf="kittenImageSrc.errors?.['required']">La photo du chaton est requise</span>
     </fieldset>
-    <div class="errors" *ngIf="kittenImageSrc.errors">
-        <span *ngIf="kittenImageSrc.errors?.['required']">La photo du chaton est requise</span>
-    </div>
+
     <button type="submit" [disabled]="createKittenForm.invalid">Enregistrer</button>
 </form>
