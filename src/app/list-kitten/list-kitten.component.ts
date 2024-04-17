@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Kitten } from '../models/classes/kitten.class';
+import { Position } from '../../models/classes/position.class';
 
 @Component({
   selector: 'app-list-kitten',
@@ -13,6 +14,7 @@ export class ListKittenComponent {
     new Kitten("Berlioz", "aristocat", new Date("1905-12-25"), "https://vainkeurz.com/wp-content/uploads/2021/06/berlioz.png")
   ];
   private _newKitten: Kitten = new Kitten();
+  position!: Position;
 
   @Input() set newKitten(value: Kitten) {
     this._newKitten = value;
@@ -27,8 +29,13 @@ export class ListKittenComponent {
     console.log(this.kittenList);
   }
 
-  sendAndRemoveKitten(id: number) {
+  sendAndRemoveKitten(id: number, event: MouseEvent) {
     const adoptedKitten = this.kittenList.splice(id, 1);
     this.adoptedKitten.emit(adoptedKitten[0]);
+    const position = new Position(event.clientX, event.clientY)
+    console.log(this)
+    this.position = position;
   }
+
+
 }
