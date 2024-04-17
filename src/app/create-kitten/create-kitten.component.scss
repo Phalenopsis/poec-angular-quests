@@ -3,10 +3,24 @@ form {
 
     legend {
         font-size: 2rem;
+        margin-bottom: 1rem;
     }
 
     fieldset {
         border: none;
+        margin-bottom: 1rem;
+        padding: 1rem;
+        margin: 1rem 0;
+        border: 1px solid white;
+        -webkit-box-shadow: 5px 5px 15px 5px deeppink inset,
+            5px 5px 15px 5px deeppink;
+        box-shadow: 5px 5px 15px 5px deeppink inset,
+            5px 5px 15px 5px deeppink;
+
+        span {
+            display: block;
+        }
+
     }
 
     label {
