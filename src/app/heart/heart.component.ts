@@ -28,11 +28,13 @@ export class HeartComponent {
   actualPosition: Position = new Position(0, 0);
   xBase: number = 0;
   _tick: number = 0;
+  _index: number = 0;
   vx: number = BASE_HEART_VELOCITY;
   vy: number = BASE_HEART_VELOCITY;
 
   @Input() set index(value: number) {
-    this.calcVelocity(value);
+    this._index = value;
+    this.calcVelocity();
   }
 
   resetPosition() {
@@ -40,14 +42,18 @@ export class HeartComponent {
   }
 
   move() {
-    if (this._tick > this.initialTick) this.actualPosition.move(this.vx, this.vy);
+    this.calcVelocity(this._tick);
+    if (this._tick > this.initialTick)
+      this.actualPosition.move(
+        this.vx * (this._tick - this.initialTick),
+        this.vy * (this._tick - this.initialTick));
   }
 
-  calcVelocity(value: number) {
-    const angle = value * 360 / NUMBER_OF_HEARTS;
+  calcVelocity(angleAdded: number = 0) {
+    const angle = angleAdded * 15 + (this._index * 360 / NUMBER_OF_HEARTS);
     const angleRad = angle * Math.PI / 180
-    this.vx *= Math.cos(angleRad);
-    this.vy *= Math.sin(angleRad);
+    this.vx = BASE_HEART_VELOCITY * Math.cos(angleRad);
+    this.vy = BASE_HEART_VELOCITY * Math.sin(angleRad);
   }
 
 }
