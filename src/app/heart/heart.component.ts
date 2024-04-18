@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Position } from '../models/classes/position.class';
-import { NUMBER_OF_HEART_TICKS, NUMBER_OF_HEARTS } from '../models/constant';
+import { BASE_HEART_VELOCITY, NUMBER_OF_HEART_TICKS, NUMBER_OF_HEARTS } from '../models/constant';
 
 
 @Component({
@@ -21,8 +21,8 @@ export class HeartComponent {
     this.move();
   }
 
-  vx: number = 15;
-  vy: number = 15;
+  vx: number = BASE_HEART_VELOCITY;
+  vy: number = BASE_HEART_VELOCITY;
 
   @Input() set index(value: number) {
     this.calcVelocity(value);
