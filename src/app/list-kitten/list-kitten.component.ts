@@ -1,6 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Kitten } from '../models/classes/kitten.class';
-import { Position } from '../../models/classes/position.class';
 import { interval, takeWhile } from 'rxjs';
 
 @Component({
@@ -24,7 +23,6 @@ export class ListKittenComponent {
   @Output()
   adoptedKitten: EventEmitter<Kitten> = new EventEmitter();
 
-  position!: Position | undefined;
   isExplode: boolean = false;
   counter: number = 40;
   tick: number = 0;
@@ -33,11 +31,9 @@ export class ListKittenComponent {
     if (this._newKitten.name !== "") this.kittenList.push(this._newKitten);
   }
 
-  sendAndRemoveKitten(id: number, event: MouseEvent) {
+  sendAndRemoveKitten(id: number) {
     const adoptedKitten = this.kittenList.splice(id, 1);
     this.adoptedKitten.emit(adoptedKitten[0]);
-    const position = new Position(event.clientX, event.clientY)
-    this.position = position;
     this.isExplode = true;
     this.runExplosion();
   }
@@ -49,7 +45,6 @@ export class ListKittenComponent {
       .pipe(takeWhile(() => this.isExplode))
       .subscribe((n) => {
         this.tick += 1;
-        console.log(this.tick);
         if (this.tick > this.counter) {
           this.resetExplosion();
         }
@@ -63,8 +58,6 @@ export class ListKittenComponent {
   resetExplosion() {
     this.isExplode = false;
     this.tick = 0;
-    this.position = undefined;
-
   }
 
 }

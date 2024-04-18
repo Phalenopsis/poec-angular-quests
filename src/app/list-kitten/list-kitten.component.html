@@ -1,7 +1,7 @@
 
 <section>
     <h2>Kittens to adopt</h2>
-    <div *ngIf="position != undefined">
+    <div *ngIf="tick != 0">
         <app-heart 
             *ngFor="let i of [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], let index = index"
             [index]="index"
@@ -12,7 +12,7 @@
         <li *ngFor="let kitten of kittenList; let index = index">
             <app-kitten-card
             [kitten]="kitten"></app-kitten-card> 
-            <button (click)="sendAndRemoveKitten(index, $event)">Adopter ❤️</button>
+            <button (click)="sendAndRemoveKitten(index)">Adopter ❤️</button>
         </li>
     </ul>
 </section>
