@@ -9,13 +9,7 @@ import { Position } from '../../models/classes/position.class';
 })
 export class HeartComponent {
 
-  _actualPosition!: Position;
-
-  _startPosition!: Position;
-  @Input() set startPosition(value: Position) {
-    this._startPosition = new Position(0, 0);
-    this._actualPosition = new Position(0, 0);
-  }
+  actualPosition: Position = new Position(0, 0);
 
   _tick: number = 0;
   @Input() set tick(value: number) {
@@ -34,11 +28,11 @@ export class HeartComponent {
   }
 
   resetPosition() {
-    this._actualPosition = this._startPosition;
+    this.actualPosition = new Position(0, 0);
   }
 
   move() {
-    this._actualPosition.move(this.vx, this.vy);
+    this.actualPosition.move(this.vx, this.vy);
   }
 
   calcVelocity(value: number) {
