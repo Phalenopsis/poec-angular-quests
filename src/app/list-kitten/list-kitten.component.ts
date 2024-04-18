@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Kitten } from '../models/classes/kitten.class';
 import { interval, takeWhile } from 'rxjs';
-import { NUMBER_OF_HEARTS } from '../models/constant';
+import { NUMBER_OF_HEART_TICKS, NUMBER_OF_HEARTS } from '../models/constant';
 
 @Component({
   selector: 'app-list-kitten',
@@ -27,7 +27,7 @@ export class ListKittenComponent {
   adoptedKitten: EventEmitter<Kitten> = new EventEmitter();
 
   isExplode: boolean = false;
-  counter: number = 40;
+  counter: number = NUMBER_OF_HEART_TICKS;
   tick: number = 0;
 
   addKitten() {

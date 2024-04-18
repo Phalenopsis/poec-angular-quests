@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Position } from '../models/classes/position.class';
-import { NUMBER_OF_HEARTS } from '../models/constant';
+import { NUMBER_OF_HEART_TICKS, NUMBER_OF_HEARTS } from '../models/constant';
 
 
 @Component({
@@ -15,7 +15,7 @@ export class HeartComponent {
   _tick: number = 0;
   @Input() set tick(value: number) {
     this._tick = value;
-    if (this.tick == 40) {
+    if (this.tick == NUMBER_OF_HEART_TICKS) {
       this.resetPosition();
     }
     this.move();
