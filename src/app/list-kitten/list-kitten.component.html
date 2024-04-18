@@ -3,14 +3,15 @@
     <h2 class="neonText">Kittens to adopt</h2>
     <div *ngIf="tick != 0">
         <div *ngFor="let wave of arrayForWavesGeneration, let waveIndex = index">
+            <div *ngIf="tick > counter / 2 * waveIndex">
             <app-heart 
                 *ngFor="let i of arrayForHeartGeneration, let heartIndex = index"
                 [index]="heartIndex"
                 [tick]="tick"
-                [clickPosition]="position"
+                [xBase]="position"
                 [initialTick]="counter / 4 * waveIndex"
                 ></app-heart>
-
+            </div>
         </div>
     </div>
     <ul class="card-container">

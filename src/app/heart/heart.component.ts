@@ -9,10 +9,9 @@ import { BASE_HEART_VELOCITY, NUMBER_OF_HEART_TICKS, NUMBER_OF_HEARTS } from '..
   styleUrl: './heart.component.scss'
 })
 export class HeartComponent {
-  @Input() set clickPosition(value: Position) {
-    this.xBase = window.innerWidth / 2 - value.x / 2;
+  @Input() set xBase(value: Position) {
+    this._xBase = window.innerWidth / 2 - value.x / 2;
     this.resetPosition();
-    console.log(this.xBase)
   }
 
   @Input() set tick(value: number) {
@@ -24,9 +23,8 @@ export class HeartComponent {
   }
   @Input() initialTick: number = 0;
 
-  _clickPosition: Position = new Position(0, 0);
   actualPosition: Position = new Position(0, 0);
-  xBase: number = 0;
+  _xBase: number = 0;
   _tick: number = 0;
   _index: number = 0;
   vx: number = BASE_HEART_VELOCITY;
@@ -38,7 +36,7 @@ export class HeartComponent {
   }
 
   resetPosition() {
-    this.actualPosition = new Position(this.xBase, 0);
+    this.actualPosition = new Position(this._xBase, 0);
   }
 
   move() {
