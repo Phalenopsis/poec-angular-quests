@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Position } from '../../models/classes/position.class';
+import { Position } from '../models/classes/position.class';
 
 
 @Component({
