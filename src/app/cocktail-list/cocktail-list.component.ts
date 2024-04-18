@@ -9,7 +9,7 @@ import { Cocktail } from '../models/classes/cocktail.class';
 })
 export class CocktailListComponent {
   cocktails: Cocktail[];
-  constructor(private cocktailService: CocktailService) {
+  constructor(public cocktailService: CocktailService) {
     this.cocktails = this.cocktailService.getCocktails();
   }
 }
