@@ -16,12 +16,13 @@ export class HeartComponent {
   }
 
   @Input() set tick(value: number) {
-    this._tick = value;
+    this._tick = value - this.initialTick;
     if (this.tick == NUMBER_OF_HEART_TICKS) {
       this.resetPosition();
     }
     this.move();
   }
+  @Input() initialTick: number = 0;
 
   _clickPosition: Position = new Position(0, 0);
   actualPosition: Position = new Position(0, 0);
@@ -39,7 +40,7 @@ export class HeartComponent {
   }
 
   move() {
-    this.actualPosition.move(this.vx, this.vy);
+    if (this._tick > this.initialTick) this.actualPosition.move(this.vx, this.vy);
   }
 
   calcVelocity(value: number) {

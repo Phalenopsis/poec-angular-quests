@@ -2,13 +2,17 @@
 <section>
     <h2 class="neonText">Kittens to adopt</h2>
     <div *ngIf="tick != 0">
-        <app-heart 
-            *ngFor="let i of arrayForHeartGeneration, let index = index"
-            [index]="index"
-            [tick]="tick"
-            [clickPosition]="position"
-            ></app-heart>
+        <div *ngFor="let wave of arrayForWavesGeneration, let waveIndex = index">
+            <app-heart 
+                *ngFor="let i of arrayForHeartGeneration, let heartIndex = index"
+                [index]="heartIndex"
+                [tick]="tick"
+                [clickPosition]="position"
+                [initialTick]="counter / 4 * waveIndex"
+                ></app-heart>
+
         </div>
+    </div>
     <ul class="card-container">
         <li *ngFor="let kitten of kittenList; let index = index">
             <app-kitten-card
