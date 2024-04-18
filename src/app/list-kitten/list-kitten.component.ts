@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Kitten } from '../models/classes/kitten.class';
 import { interval, takeWhile } from 'rxjs';
-import { NUMBER_OF_HEART_TICKS, NUMBER_OF_HEARTS } from '../models/constant';
+import { NUMBER_OF_HEART_TICKS, NUMBER_OF_HEARTS, TICK_DURATION } from '../models/constant';
 
 @Component({
   selector: 'app-list-kitten',
@@ -43,7 +43,7 @@ export class ListKittenComponent {
 
   runExplosion() {
     this.tick = 0;
-    const source = interval(60);
+    const source = interval(TICK_DURATION);
     source
       .pipe(takeWhile(() => this.isExplode))
       .subscribe((n) => {
