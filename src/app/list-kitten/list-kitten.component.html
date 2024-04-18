@@ -1,16 +1,18 @@
 
 <section>
     <h2>Kittens to adopt</h2>
+    <div *ngIf="position != undefined">
+        <app-heart 
+            *ngFor="let i of [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], let index = index"
+            (stopHeartExplosion)="stopExplosion($event)"
+            [startPosition] = "position"
+            [index]="index"></app-heart>
+        </div>
     <ul class="card-container">
         <li *ngFor="let kitten of kittenList; let index = index">
             <app-kitten-card
             [kitten]="kitten"></app-kitten-card> 
             <button (click)="sendAndRemoveKitten(index, $event)">Adopter ❤️</button>
-            <div *ngIf="position != undefined">
-            <app-heart 
-                *ngFor="let i in 10, let index = index" 
-                [startPosition] = "position"></app-heart>
-            </div>
         </li>
     </ul>
 </section>

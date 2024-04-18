@@ -14,7 +14,7 @@ export class ListKittenComponent {
     new Kitten("Berlioz", "aristocat", new Date("1905-12-25"), "https://vainkeurz.com/wp-content/uploads/2021/06/berlioz.png")
   ];
   private _newKitten: Kitten = new Kitten();
-  position!: Position;
+  position!: Position | undefined;
 
   @Input() set newKitten(value: Kitten) {
     this._newKitten = value;
@@ -26,16 +26,17 @@ export class ListKittenComponent {
 
   addKitten() {
     if (this._newKitten.name !== "") this.kittenList.push(this._newKitten);
-    console.log(this.kittenList);
   }
 
   sendAndRemoveKitten(id: number, event: MouseEvent) {
     const adoptedKitten = this.kittenList.splice(id, 1);
     this.adoptedKitten.emit(adoptedKitten[0]);
     const position = new Position(event.clientX, event.clientY)
-    console.log(this)
     this.position = position;
   }
 
+  stopExplosion(event: boolean) {
+    this.position = undefined;
+  }
 
 }
