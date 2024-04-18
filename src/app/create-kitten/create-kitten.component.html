@@ -1,5 +1,5 @@
 <form #createKittenForm="ngForm" (ngSubmit)="saveKitten()">
-    <legend>Enregistrement d'un chaton</legend>
+    <legend class="neonText">Enregistrement d'un chaton</legend>
     <fieldset>
         <label for="kittenName">Nom du chaton :</label>
         <input type="text" name="kittenName" id="kittenName" [(ngModel)]="newKitten.name" #kittenName="ngModel" required>

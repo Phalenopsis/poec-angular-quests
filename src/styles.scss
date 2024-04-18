@@ -38,3 +38,17 @@ hr {
     box-shadow: 5px 5px 15px 5px deeppink;
 
 }
+
+.neonText {
+    --neon-color: rgb(153, 1, 82);
+    color: #fff;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px deeppink,
+        0 0 42px deeppink,
+        0 0 82px deeppink,
+        0 0 92px deeppink,
+        0 0 102px var(--neon-color),
+        0 0 151px var(--neon-color);
+}
