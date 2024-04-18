@@ -2,6 +2,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Kitten } from '../models/classes/kitten.class';
 import { interval, takeWhile } from 'rxjs';
 import { NUMBER_OF_HEART_TICKS, NUMBER_OF_HEARTS, TICK_DURATION } from '../models/constant';
+import { Position } from '../models/classes/position.class';
 
 @Component({
   selector: 'app-list-kitten',
@@ -25,7 +26,7 @@ export class ListKittenComponent {
 
   @Output()
   adoptedKitten: EventEmitter<Kitten> = new EventEmitter();
-
+  position!: Position;
   isExplode: boolean = false;
   counter: number = NUMBER_OF_HEART_TICKS;
   tick: number = 0;
@@ -34,9 +35,10 @@ export class ListKittenComponent {
     if (this._newKitten.name !== "") this.kittenList.push(this._newKitten);
   }
 
-  sendAndRemoveKitten(id: number) {
+  sendAndRemoveKitten(id: number, event: MouseEvent) {
     const adoptedKitten = this.kittenList.splice(id, 1);
     this.adoptedKitten.emit(adoptedKitten[0]);
+    this.position = new Position(event.clientX, event.clientY);
     this.isExplode = true;
     this.runExplosion();
   }

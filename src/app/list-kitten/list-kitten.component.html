@@ -6,13 +6,14 @@
             *ngFor="let i of arrayForHeartGeneration, let index = index"
             [index]="index"
             [tick]="tick"
+            [clickPosition]="position"
             ></app-heart>
         </div>
     <ul class="card-container">
         <li *ngFor="let kitten of kittenList; let index = index">
             <app-kitten-card
             [kitten]="kitten"></app-kitten-card> 
-            <button (click)="sendAndRemoveKitten(index)">Adopter ❤️</button>
+            <button (click)="sendAndRemoveKitten(index, $event)">Adopter ❤️</button>
         </li>
     </ul>
 </section>
