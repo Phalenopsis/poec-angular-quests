@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Kitten } from '../models/classes/kitten.class';
 import { interval, takeWhile } from 'rxjs';
+import { NUMBER_OF_HEARTS } from '../models/constant';
 
 @Component({
   selector: 'app-list-kitten',
@@ -14,6 +15,8 @@ export class ListKittenComponent {
     new Kitten("Berlioz", "aristocat", new Date("1905-12-25"), "https://vainkeurz.com/wp-content/uploads/2021/06/berlioz.png")
   ];
   private _newKitten: Kitten = new Kitten();
+
+  arrayForHeartGeneration = [...Array(NUMBER_OF_HEARTS).keys()];
 
   @Input() set newKitten(value: Kitten) {
     this._newKitten = value;

@@ -3,7 +3,7 @@
     <h2>Kittens to adopt</h2>
     <div *ngIf="tick != 0">
         <app-heart 
-            *ngFor="let i of [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], let index = index"
+            *ngFor="let i of arrayForHeartGeneration, let index = index"
             [index]="index"
             [tick]="tick"
             ></app-heart>

@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Position } from '../models/classes/position.class';
+import { NUMBER_OF_HEARTS } from '../models/constant';
 
 
 @Component({
@@ -36,7 +37,7 @@ export class HeartComponent {
   }
 
   calcVelocity(value: number) {
-    const angle = value * 360 / 10;
+    const angle = value * 360 / NUMBER_OF_HEARTS;
     const angleRad = angle * Math.PI / 180
     this.vx *= Math.cos(angleRad);
     this.vy *= Math.sin(angleRad);
