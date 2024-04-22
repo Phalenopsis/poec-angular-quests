@@ -8,8 +8,10 @@ import { Cocktail } from '../models/classes/cocktail.class';
   styleUrl: './cocktail-list.component.scss'
 })
 export class CocktailListComponent {
-  cocktails: Cocktail[];
+  cocktails!: Cocktail[];
   constructor(public cocktailService: CocktailService) {
-    this.cocktails = this.cocktailService.getCocktails();
+    this.cocktailService.getCocktails().subscribe(cocktails => this.cocktails = cocktails
+    );
+
   }
 }

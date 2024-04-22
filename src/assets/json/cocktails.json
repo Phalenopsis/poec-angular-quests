@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Grenadine à l'eau",
+        "price": 5,
+        "imageSrc": "https://www.corsicavap.com/img/p/9/1/9/919-large_default.jpg"
+    },
+    {
+        "name": "Menthe à l'eau",
+        "price": 5,
+        "imageSrc": "https://www.infocalories.fr/images/sirop-menthe.jpg"
+    },
+    {
+        "name": "Lait fraise",
+        "price": 4,
+        "imageSrc": "https://www.1001cocktails.com/wp-content/uploads/1001cocktails/2018/06/shutterstock_1564855816.jpg"
+    },
+    {
+        "name": "Fraise à l'eau",
+        "price": 5,
+        "imageSrc": "http://lacuisinedeniya.fr/wp-content/uploads/2015/07/sirop_fraise.jpg"
+    }
+]
