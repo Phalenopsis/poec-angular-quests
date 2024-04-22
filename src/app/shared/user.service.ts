@@ -8,10 +8,22 @@ import { User } from '../models/classes/user.class';
 })
 export class UserService {
   private http = inject(HttpClient);
+  private userList: User[] = [];
 
-  constructor() { }
+  constructor() {
+  }
 
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>("./../assets/json/user.json");
+  }
+
+  getUserList(): User[] {
+    this.getUsers().subscribe(users => this.userList = users);
+    console.log(this.userList)
+    return this.userList;
+  }
+
+  getUserById() {
+
   }
 }
